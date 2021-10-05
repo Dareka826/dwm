@@ -234,6 +234,7 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
+static void lock(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
@@ -703,11 +704,9 @@ drawbar(Monitor *m)
 	Client *c;
 
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon) { /* status is only drawn on selected monitor */
-		drw_setscheme(drw, scheme[SchemeNorm]);
-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
-	}
+	drw_setscheme(drw, scheme[SchemeNorm]);
+	tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+	drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
 
 	for (c = m->clients; c; c = c->next) {
 		occ |= c->tags;
@@ -1990,9 +1989,11 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
+	Monitor *m;
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
 		strcpy(stext, "dwm-"VERSION);
-	drawbar(selmon);
+	for(m = mons; m; m = m->next)
+		drawbar(m);
 }
 
 void
@@ -2125,6 +2126,21 @@ zoom(const Arg *arg)
 		if (!c || !(c = nexttiled(c->next)))
 			return;
 	pop(c);
+}
+
+void
+lock(const Arg *arg)
+{
+	char lock_path[1000];
+	lock_path[0] = '\0';
+
+	strcat(lock_path, getenv("HOME"));
+	strcat(lock_path, "/.local/bin/lock.sh");
+
+	const char *lock_cmd[] = { "dash", lock_path, NULL };
+
+	Arg spawn_arg = {.v = lock_cmd};
+	spawn(&spawn_arg);
 }
 
 int
