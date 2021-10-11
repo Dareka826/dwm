@@ -64,6 +64,8 @@ static const char *tmux_attachcmd[]  = { "alacritty", "-e", "tmux", "attach", NU
 static const char *increasevol[] = { "pamixer", "--allow-boost", "--increase", "5", NULL };
 static const char *decreasevol[] = { "pamixer", "--allow-boost", "--decrease", "5", NULL };
 
+static const char *cmustoggleplayback[] = { "cmus-remote", "-u", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -106,6 +108,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Down,   spawn,          {.v = decreasevol } },
 
 	{ MODKEY,                       XK_l,      lock,           {0} },
+
+	{ MODKEY,                       XK_c,      spawn,          {.v = cmustoggleplayback } },
 };
 
 /* button definitions */
