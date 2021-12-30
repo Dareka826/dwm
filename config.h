@@ -29,25 +29,25 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 
-    { NULL,       NULL,       "[L1] ",    1,            0,            1 },
-    { NULL,       NULL,       "[L2] ",    1 << 1,       0,            1 },
-    { NULL,       NULL,       "[L3] ",    1 << 2,       0,            1 },
-    { NULL,       NULL,       "[L4] ",    1 << 3,       0,            1 },
-    { NULL,       NULL,       "[L5] ",    1 << 4,       0,            1 },
-    { NULL,       NULL,       "[L6] ",    1 << 5,       0,            1 },
-    { NULL,       NULL,       "[L7] ",    1 << 6,       0,            1 },
-    { NULL,       NULL,       "[L8] ",    1 << 7,       0,            1 },
-    { NULL,       NULL,       "[L9] ",    1 << 8,       0,            1 },
+    /*{ NULL,       NULL,       "[L1] ",    1,            0,            1 },*/
+    /*{ NULL,       NULL,       "[L2] ",    1 << 1,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L3] ",    1 << 2,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L4] ",    1 << 3,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L5] ",    1 << 4,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L6] ",    1 << 5,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L7] ",    1 << 6,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L8] ",    1 << 7,       0,            1 },*/
+    /*{ NULL,       NULL,       "[L9] ",    1 << 8,       0,            1 },*/
 
-    { NULL,       NULL,       "[R1] ",    1,            0,            0 },
-    { NULL,       NULL,       "[R2] ",    1 << 1,       0,            0 },
-    { NULL,       NULL,       "[R3] ",    1 << 2,       0,            0 },
-    { NULL,       NULL,       "[R4] ",    1 << 3,       0,            0 },
-    { NULL,       NULL,       "[R5] ",    1 << 4,       0,            0 },
-    { NULL,       NULL,       "[R6] ",    1 << 5,       0,            0 },
-    { NULL,       NULL,       "[R7] ",    1 << 6,       0,            0 },
-    { NULL,       NULL,       "[R8] ",    1 << 7,       0,            0 },
-    { NULL,       NULL,       "[R9] ",    1 << 8,       0,            0 },
+    /*{ NULL,       NULL,       "[R1] ",    1,            0,            0 },*/
+    /*{ NULL,       NULL,       "[R2] ",    1 << 1,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R3] ",    1 << 2,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R4] ",    1 << 3,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R5] ",    1 << 4,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R6] ",    1 << 5,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R7] ",    1 << 6,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R8] ",    1 << 7,       0,            0 },*/
+    /*{ NULL,       NULL,       "[R9] ",    1 << 8,       0,            0 },*/
 };
 
 /* layout(s) */
